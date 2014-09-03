@@ -35,18 +35,6 @@ class MySpider(Spider):
         for link in links:
             cleanedLinks.append(cr.cleanLink(link))
         
-        #print 'response:', url
-        #print 'title:', title
-        
-        #if date:
-        #    match = re.search(r'\d\d\d\d-\d\d-\d\d',date[0])
-        #    if match:
-        #        date = match.group()
-        #    else: date = None
-        #else:
-        #    date = None
-        #print 'date:', date
-        
         #print 'chefline:', chefline
         if chefline and not chef:
             chef = cr.replaceAll(chefline[0], {'Recipe':'','courtesy':'','Courtesy':'','of':''}).strip()
